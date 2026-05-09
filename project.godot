@@ -15,11 +15,13 @@ run/main_scene="uid://bytqh4pfng4q4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[editor_plugins]
-enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg")
 [autoload]
 
 Globals="*uid://cp3tfc0qokdvt"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg")
 
 [gui]
 
