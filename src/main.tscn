@@ -3,21 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://4unwhiuqxpqy" path="res://src/player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://uwkq38h8cwju" path="res://src/player/player.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b2ia8d8tx2rsj" path="res://src/bounce/bounce.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://3op00kydd16q" path="res://src/player/player_camera.gd" id="4_3cfgd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
-size = Vector3(200, 1, 200)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5q4o7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_3cfgd"]
+size = Vector2(200, 200)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-material = SubResource("StandardMaterial3D_0xm2m")
-size = Vector3(200, 1, 200)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fyndt"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+height = 503
+noise = SubResource("FastNoiseLite_fyndt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_texture = SubResource("NoiseTexture2D_h2yge")
-roughness = 0.86
+metallic = 0.21
+metallic_specular = 0.3
+roughness = 0.68
 
 [node name="Node" type="Node" unique_id=1550204960]
 
@@ -25,10 +28,10 @@ roughness = 0.86
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1795453006]
-shape = SubResource("BoxShape3D_7dm0k")
+shape = SubResource("WorldBoundaryShape3D_5q4o7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1379843612]
-mesh = SubResource("BoxMesh_ig7tw")
+mesh = SubResource("PlaneMesh_3cfgd")
 surface_material_override/0 = SubResource("StandardMaterial3D_1bvp3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1570533583]
@@ -55,4 +58,6 @@ transform = Transform3D(-0.97145873, -0.23721154, 0, 0.23721154, -0.97145873, 0,
 [node name="Bounce6" parent="." unique_id=643287095 groups=["Bounce"] instance=ExtResource("3_h2yge")]
 transform = Transform3D(0.8874628, 0.46088246, 0, -0.46088246, 0.8874628, 0, 0, 0, 1, -4.030593, -0.9175525, -9.687102)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=566293956]
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=992301537]
+current = true
+script = ExtResource("4_3cfgd")

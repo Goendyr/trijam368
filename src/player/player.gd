@@ -20,7 +20,7 @@ const camera_angle = -16
 @export var fall_acceleration = 9
 
 
-var current_direction = Vector3.FORWARD
+@export var current_direction = Vector3.FORWARD
 
 var will_jump = false
 
@@ -81,7 +81,6 @@ func _physics_process(delta):
 	
 	velocity = movement_xz
 	velocity.y  = movement_y
-	print(velocity)
 	# Moving the Character
 	move_and_slide()
 
