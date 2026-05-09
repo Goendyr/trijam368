@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bytqh4pfng4q4"]
 
 [ext_resource type="PackedScene" uid="uid://dl26yi7830ssl" path="res://baby.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://main_cam.gd" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://d3nwgehkkvxi3" path="res://src/player/ford_focus_mesh.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,9 +32,8 @@ shadow_enabled = true
 shape = SubResource("WorldBoundaryShape3D_0xm2m")
 
 [node name="start_baby" parent="." unique_id=1271769914 instance=ExtResource("1_ig7tw")]
+visible = false
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=38419573]
+[node name="main_cam" type="Camera3D" parent="." unique_id=38419573]
 transform = Transform3D(-1, 0, -8.742277e-08, -3.280573e-08, 0.9269221, 0.3752538, 8.10341e-08, 0.3752538, -0.9269221, 0, 0, 0)
 script = ExtResource("2_0xm2m")
-
-[node name="FordFocusMesh" parent="." unique_id=624348256 instance=ExtResource("3_h2yge")]

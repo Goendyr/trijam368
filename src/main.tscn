@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://d2mnnuriijoda"]
 
-[ext_resource type="PackedScene" path="res://src/player/player.tscn" id="1_0xm2m"]
-[ext_resource type="Script" path="res://src/player/player.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://4unwhiuqxpqy" path="res://src/player/player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://uwkq38h8cwju" path="res://src/player/player.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b2ia8d8tx2rsj" path="res://src/bounce/bounce.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://3op00kydd16q" path="res://src/player/player_camera.gd" id="4_3cfgd"]
+[ext_resource type="Script" path="res://src/player/player_camera.gd" id="4_3cfgd"]
+[ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
+[ext_resource type="AudioStream" uid="uid://cn3xh5kfcjv82" path="res://assets/audio/music/mrclaps-this-heavy-metal-492569.mp3" id="6_mgm53"]
+[ext_resource type="AudioStream" uid="uid://dsr86gvsy8ft3" path="res://assets/audio/music/davidjbarrios-intense-doom-style-metal-instrumental-quotsynthetic-edenquot-515740.mp3" id="7_uewes"]
+[ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
+[ext_resource type="AudioStream" uid="uid://cdqefcqw03v0b" path="res://assets/audio/music/nastelbom-children-463424.mp3" id="9_srxbw"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5q4o7"]
 
@@ -21,6 +26,16 @@ albedo_texture = SubResource("NoiseTexture2D_h2yge")
 metallic = 0.21
 metallic_specular = 0.3
 roughness = 0.68
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_d3u4l"]
+stream_count = 3
+stream_0 = ExtResource("6_mgm53")
+stream_1 = ExtResource("7_uewes")
+stream_2 = ExtResource("8_kqbth")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_mlv6i"]
+stream_count = 1
+stream_0 = ExtResource("9_srxbw")
 
 [node name="Node" type="Node" unique_id=1550204960]
 
@@ -63,3 +78,15 @@ transform = Transform3D(0.8874628, 0.46088246, 0, -0.46088246, 0.8874628, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68507814, 2.3233607)
 current = true
 script = ExtResource("4_3cfgd")
+
+[node name="game_manager" type="Node" parent="." unique_id=1940545676]
+script = ExtResource("5_kf8lf")
+
+[node name="game_audio" type="AudioStreamPlayer" parent="." unique_id=449546618]
+stream = SubResource("AudioStreamPlaylist_d3u4l")
+bus = &"Music"
+
+[node name="menu_audio" type="AudioStreamPlayer" parent="." unique_id=419366967]
+stream = SubResource("AudioStreamPlaylist_mlv6i")
+autoplay = true
+bus = &"Music"
