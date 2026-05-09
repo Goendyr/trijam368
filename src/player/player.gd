@@ -76,6 +76,7 @@ func _physics_process(delta):
 		_will_jump = false
 	elif not _will_jump and is_on_floor():
 		destroyed.emit()
+		$Explosion.explode()
 
 	# Ground Velocity
 	movement_xz = movement_xz.limit_length(max_speed)

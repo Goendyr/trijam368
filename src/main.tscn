@@ -10,10 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://djsrygrl0eir1" path="res://src/environment/slide.tscn" id="7_5mrjc"]
 [ext_resource type="PackedScene" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://c148pg5pgju72" path="res://src/ui/scoreboard.tscn" id="8_mgm53"]
+[ext_resource type="PackedScene" uid="uid://b4no1mifq5dq" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rlaii"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.28627452, 0.6156863, 0.972549, 1)
+sky_horizon_color = Color(0.56078434, 0.6745098, 0.44313726, 1)
+ground_bottom_color = Color(0.21506995, 0.85148096, 0.22052696, 1)
+ground_horizon_color = Color(0.56078434, 0.6745098, 0.44313726, 1)
 
 [sub_resource type="Sky" id="Sky_5mrjc"]
 sky_material = SubResource("ProceduralSkyMaterial_rlaii")
@@ -21,7 +24,7 @@ sky_material = SubResource("ProceduralSkyMaterial_rlaii")
 [sub_resource type="Environment" id="Environment_kf8lf"]
 background_mode = 2
 sky = SubResource("Sky_5mrjc")
-tonemap_mode = 2
+tonemap_mode = 3
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5q4o7"]
 
@@ -193,6 +196,99 @@ transform = Transform3D(0.96577215, 0, -0.25939235, 0, 1, 0, 0.25939235, 0, 0.96
 
 [node name="Slide6" parent="env" unique_id=577066503 instance=ExtResource("7_5mrjc")]
 transform = Transform3D(-0.6225148, 0, -0.78260815, 0, 1, 0, 0.78260815, 0, -0.6225148, 11.739067, 0, 18.033909)
+
+[node name="PointyTree" parent="env" unique_id=816889768 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.310064, 0.038999796, -0.16724396)
+
+[node name="PointyTree2" parent="env" unique_id=2090604068 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.02662, 0.038999796, 11.720905)
+
+[node name="PointyTree3" parent="env" unique_id=1651282535 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.260273, 0.038999796, 12.539484)
+
+[node name="PointyTree4" parent="env" unique_id=1839994717 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.405815, 0.038999796, -13.897415)
+
+[node name="PointyTree5" parent="env" unique_id=1798048424 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.879505, 0.038999796, -25.274693)
+
+[node name="PointyTree6" parent="env" unique_id=1095978384 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3149366, 0.03900075, -17.141117)
+
+[node name="PointyTree7" parent="env" unique_id=1977443475 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.622048, 0.03900075, -4.966918)
+
+[node name="PointyTree8" parent="env" unique_id=1709757894 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.436309, 0.03900075, 4.283124)
+
+[node name="PointyTree9" parent="env" unique_id=1898863119 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.896412, 0.03900075, -2.440094)
+
+[node name="PointyTree10" parent="env" unique_id=1194231613 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1674843, 0.038998842, 29.501762)
+
+[node name="PointyTree11" parent="env" unique_id=868745204 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.893066, 0.038998842, 57.41064)
+
+[node name="PointyTree12" parent="env" unique_id=1747989268 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.79605, 0.03900075, -23.555088)
+
+[node name="PointyTree13" parent="env" unique_id=2032541632 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.00209, 0.03900075, 35.043633)
+
+[node name="PointyTree14" parent="env" unique_id=2131122482 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.207054, 0.039002657, 22.821068)
+
+[node name="PointyTree15" parent="env" unique_id=1956898496 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.163555, 0.039002657, -21.732796)
+
+[node name="PointyTree16" parent="env" unique_id=1848653706 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2970142, 0.039002657, -33.296555)
+
+[node name="PointyTree17" parent="env" unique_id=984722129 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.275011, 0.039002657, -7.664751)
+
+[node name="PointyTree18" parent="env" unique_id=897156928 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.959593, 0.039002657, -32.85823)
+
+[node name="PointyTree19" parent="env" unique_id=1856368418 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.619247, 0.03900075, -47.023384)
+
+[node name="PointyTree20" parent="env" unique_id=439980877 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.80393, 0.03900075, -44.808197)
+
+[node name="PointyTree21" parent="env" unique_id=1253080710 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.84658, 0.039002657, -3.9693184)
+
+[node name="PointyTree22" parent="env" unique_id=824686939 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.325447, 0.03900075, 44.947712)
+
+[node name="PointyTree23" parent="env" unique_id=320161119 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.405533, 0.039002657, 4.1444206)
+
+[node name="PointyTree24" parent="env" unique_id=1210958908 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.512604, 0.039010286, 43.69283)
+
+[node name="PointyTree25" parent="env" unique_id=237750406 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.541817, 0.039002657, 78.61713)
+
+[node name="PointyTree26" parent="env" unique_id=632039567 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.574305, 0.039002657, 36.831543)
+
+[node name="PointyTree27" parent="env" unique_id=129020646 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.47738, 0.039002657, 21.928993)
+
+[node name="PointyTree28" parent="env" unique_id=1572577687 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.139732, 0.039002657, -35.343536)
+
+[node name="PointyTree29" parent="env" unique_id=922053000 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.50936, 0.039002657, -47.616226)
+
+[node name="PointyTree30" parent="env" unique_id=1938122751 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0288, 0.039002657, -23.655268)
+
+[node name="PointyTree31" parent="env" unique_id=853515486 instance=ExtResource("11_uewes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0288, 0.039002657, -23.655268)
 
 [connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
 [connection signal="quick_time_event" from="StuntManager" to="Player" method="_on_stunt_manager_quick_time_event"]
