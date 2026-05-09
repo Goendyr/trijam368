@@ -3,6 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://d3nwgehkkvxi3" path="res://src/player/ford_focus_mesh.tscn" id="1_p5d6n"]
 [ext_resource type="PackedScene" uid="uid://c24mnonn1e83p" path="res://src/ui/title.tscn" id="2_fuded"]
 
+[sub_resource type="GDScript" id="GDScript_fuded"]
+script/source = "extends Node3D
+
+@onready var ford_focus_mesh: Node3D = $FordFocusMesh
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ArrowLeft\"):
+		ford_focus_mesh.stunt(4)
+	if Input.is_action_just_pressed(\"ArrowRight\"):
+		ford_focus_mesh.stunt(5)
+	if Input.is_action_just_pressed(\"ArrowUp\"):
+		ford_focus_mesh.stunt(1)
+	if Input.is_action_just_pressed(\"ArrowDown\"):
+		ford_focus_mesh.stunt(3)
+"
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5d6n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +38,7 @@ sky = SubResource("Sky_fuded")
 tonemap_mode = 2
 
 [node name="Test_level_Hans" type="Node3D" unique_id=1528134617]
+script = SubResource("GDScript_fuded")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1186034966]
 environment = SubResource("Environment_si760")

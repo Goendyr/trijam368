@@ -83,3 +83,6 @@ func _on_area_3d_body_entered(body_: Node3D) -> void:
 	if body_.has_method("jump"):
 		body_.jump()
 		$BloodExplosion.splatter()
+		$body.queue_free()
+		$Area3D.queue_free()
+		$AudioStreamPlayer3D.play()

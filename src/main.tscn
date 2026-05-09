@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dsr86gvsy8ft3" path="res://assets/audio/music/davidjbarrios-intense-doom-style-metal-instrumental-quotsynthetic-edenquot-515740.mp3" id="7_uewes"]
 [ext_resource type="PackedScene" uid="uid://duqewr7mnao23" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
+[ext_resource type="PackedScene" uid="uid://bfb7yna4kbmvx" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://c148pg5pgju72" path="res://src/ui/scoreboard.tscn" id="8_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cdqefcqw03v0b" path="res://assets/audio/music/nastelbom-children-463424.mp3" id="9_srxbw"]
 [ext_resource type="PackedScene" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
@@ -103,8 +104,8 @@ metadata/_custom_type_script = "uid://cfpho87t1tjjm"
 [node name="StuntManager" parent="." unique_id=1339176810 node_paths=PackedStringArray("object") instance=ExtResource("5_kmhfv")]
 object = NodePath("../Player")
 height_threshold = 2.0
-stunt_delay = 0.6
-quick_time = 0.5
+stunt_delay = 0.5
+quick_time = 0.7
 slowmo_scale = 0.8
 
 [node name="Highscore" parent="." unique_id=461398107 instance=ExtResource("8_5mrjc")]

@@ -193,3 +193,4 @@ draw_pass_1 = SubResource("SphereMesh_lo4ts")
 
 [node name="CarCrashSound" type="AudioStreamPlayer" parent="." unique_id=260372925]
 stream = SubResource("AudioStreamRandomizer_vlt1v")
+bus = &"Sfx"

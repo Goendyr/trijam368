@@ -12,8 +12,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Highscore.text = str(current_highscore)
+	$Label.text = str(Engine.get_frames_per_second())
 
 func combo(_id: int) -> void:
 	current_multiplyer *= 1.5;

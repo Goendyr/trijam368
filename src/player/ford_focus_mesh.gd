@@ -13,13 +13,13 @@ func stunt(idx: int) -> void:
 	$StuntTimer.start()
 	match (idx):
 		0: left_spin_y()
-		1: forward_spin() 
+		3: forward_spin() 
 		2: right_spin_y()
-		3: backward_spin()
-		4: barrel_left()
-		5: barrel_right()
-		6: twisting_left()
-		7: twisting_right()
+		1: backward_spin()
+		5: barrel_left()
+		4: barrel_right()
+		7: twisting_left()
+		6: twisting_right()
 
 func squish() -> void:
 	var tween = get_tree().create_tween()
@@ -55,11 +55,11 @@ func barrel_right() -> void:
 	
 func twisting_left() -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property($".", "rotation", rotation + Vector3(2*PI, 0, 2*PI), 0.8)
+	tween.tween_property($".", "rotation", rotation + Vector3(2*PI, 0, 2*PI), 0.5)
 
 func twisting_right() -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property($".", "rotation", rotation - Vector3(2*PI, 0, 2*PI), 0.6)
+	tween.tween_property($".", "rotation", rotation - Vector3(2*PI, 0, 2*PI), 0.5)
 
 
 func _on_stunt_timer_timeout() -> void:

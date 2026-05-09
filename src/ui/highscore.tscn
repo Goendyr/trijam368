@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://duqewr7mnao23"]
+[gd_scene format=3 uid="uid://bfb7yna4kbmvx"]
 
 [ext_resource type="Script" uid="uid://bmftp8j7kg78j" path="res://src/ui/highscore.gd" id="1_wp0ou"]
 [ext_resource type="FontFile" uid="uid://dgymv6tu7o55b" path="res://assets/fonts/Ford_Script/Fordscript.ttf" id="2_iwnj8"]
@@ -36,3 +36,9 @@ gizmo_extents = 29.0
 
 [node name="ComboAudio" type="AudioStreamPlayer" parent="." unique_id=932462092]
 stream = SubResource("AudioStreamRandomizer_glq8l")
+bus = &"Sfx"
+
+[node name="Label" type="Label" parent="." unique_id=1130060850]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "halle"
