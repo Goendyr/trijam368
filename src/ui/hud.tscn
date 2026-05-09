@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b1iei6k6pn041"]
+
+[ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="1_eqvli"]
+
+[node name="Hud" type="Control" unique_id=189220817]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="StuntManager" parent="." unique_id=1339176810 instance=ExtResource("1_eqvli")]

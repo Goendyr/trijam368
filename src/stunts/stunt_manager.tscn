@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://b0wpdkc4x3fjq"]
+
+[ext_resource type="Script" uid="uid://dnemb4yq8pqaa" path="res://src/stunts/stunt_manager.gd" id="1_tc0in"]
+[ext_resource type="Texture2D" uid="uid://cthpkeontol80" path="res://assets/arrow.png" id="2_76dey"]
+[ext_resource type="Texture2D" uid="uid://bja4qx71aioyu" path="res://assets/arrow_right.png" id="3_io58b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io58b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2nus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8phxt"]
+
+[sub_resource type="Gradient" id="Gradient_io58b"]
+offsets = PackedFloat32Array(0.79937303, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f2nus"]
+gradient = SubResource("Gradient_io58b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="StuntManager" type="CanvasLayer" unique_id=1339176810]
+script = ExtResource("1_tc0in")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1799080155]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=287423006]
+layout_mode = 2
+columns = 3
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/GridContainer" unique_id=1818154981]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_io58b")
+
+[node name="VSeparator2" type="VSeparator" parent="CenterContainer/GridContainer" unique_id=1730146953]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f2nus")
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/GridContainer" unique_id=1208991661]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8phxt")
+
+[node name="VSeparator3" type="VSeparator" parent="CenterContainer/GridContainer" unique_id=800791004]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f2nus")
+
+[node name="VSeparator5" type="VSeparator" parent="CenterContainer/GridContainer" unique_id=156917119]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f2nus")
+
+[node name="VSeparator6" type="VSeparator" parent="CenterContainer/GridContainer" unique_id=712187220]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f2nus")
+
+[node name="Vignette" type="TextureRect" parent="." unique_id=1620348665]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_f2nus")
+
+[node name="Keys" type="Control" parent="." unique_id=1550056146]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+
+[node name="Top" type="TextureRect" parent="Keys" unique_id=1760447632]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.45
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -46.399994
+offset_right = 16.0
+offset_bottom = -14.400024
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_76dey")
+stretch_mode = 2
+
+[node name="Right" type="TextureRect" parent="Keys" unique_id=818966408]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53
+anchor_top = 0.5
+anchor_right = 0.53
+anchor_bottom = 0.5
+offset_left = 17.359938
+offset_top = -16.0
+offset_right = 49.35994
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_io58b")
+stretch_mode = 2
+
+[node name="Back" type="TextureRect" parent="Keys" unique_id=1181326461]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_76dey")
+flip_v = true
+
+[node name="Left" type="TextureRect" parent="Keys" unique_id=983519147]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.359997
+offset_top = -16.0
+offset_right = -17.360058
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_io58b")
+stretch_mode = 2
+flip_h = true
