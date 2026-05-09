@@ -19,8 +19,9 @@ const camera_angle = -16
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 9
 
-
 @export var current_direction = Vector3.FORWARD
+
+signal destroyed
 
 var _will_jump = false
 
@@ -38,6 +39,11 @@ func jump():
 
 func start_control():
 	_allow_control = true
+
+func _reset():
+	current_direction = Vector3.FORWARD
+	_will_jump = false
+	_allow_control = false
 
 func _physics_process(delta):
 	
@@ -66,9 +72,8 @@ func _physics_process(delta):
 		movement_y += 10
 		movement_xz += current_direction * boost
 		_will_jump = false
-
-
-	
+	elif not _will_jump and is_on_floor():
+		destroyed.emit()
 
 	# Ground Velocity
 	movement_xz = movement_xz.limit_length(max_speed)
