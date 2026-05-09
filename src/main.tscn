@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ia8d8tx2rsj" path="res://src/bounce/bounce.tscn" id="3_h2yge"]
 [ext_resource type="Script" path="res://src/player/player_camera.gd" id="4_3cfgd"]
 [ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
+[ext_resource type="PackedScene" uid="uid://qwyu6vpekr0q" path="res://src/ui/title.tscn" id="5_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cn3xh5kfcjv82" path="res://assets/audio/music/mrclaps-this-heavy-metal-492569.mp3" id="6_mgm53"]
 [ext_resource type="AudioStream" uid="uid://dsr86gvsy8ft3" path="res://assets/audio/music/davidjbarrios-intense-doom-style-metal-instrumental-quotsynthetic-edenquot-515740.mp3" id="7_uewes"]
 [ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
@@ -78,6 +79,9 @@ transform = Transform3D(0.8874628, 0.46088246, 0, -0.46088246, 0.8874628, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68507814, 2.3233607)
 current = true
 script = ExtResource("4_3cfgd")
+
+[node name="Title" parent="PlayerCamera" unique_id=798211030 instance=ExtResource("5_mgm53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5184047, -1.335)
 
 [node name="game_manager" type="Node" parent="." unique_id=1940545676]
 script = ExtResource("5_kf8lf")

@@ -1,4 +1,4 @@
-extends Camera3D
+extends Node
 
 var start_baby
 var is_game_started = false
@@ -6,8 +6,10 @@ var player: Node3D
 var cam
 var game_audiostream: AudioStreamPlayer
 var menu_audiostream: AudioStreamPlayer
+var title
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	title = $"../PlayerCamera/Title"
 	game_audiostream = $"../game_audio"
 	menu_audiostream = $"../menu_audio"
 	cam = $"../PlayerCamera"
@@ -26,7 +28,7 @@ func _process(delta: float) -> void:
 	if(not is_game_started):
 		player.position = start_baby.position
 		player.position.y = 80
-		cam.position = start_baby.position + Vector3(0,1,-2)
+		cam.position = start_baby.position + Vector3(0,1,2)
 	if(Input.is_action_just_pressed("start_game") && !is_game_started):
 		is_game_started = true
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 		menu_audiostream.stop()
 		
 		# titel change
+		title.show_ford()
 		
 		
 		# cam zoom out on baby hit
