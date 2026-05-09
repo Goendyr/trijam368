@@ -9,7 +9,7 @@ var menu_audiostream: AudioStreamPlayer
 var title
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	title = $"../PlayerCamera/Title"
+	title = $"../Title"
 	game_audiostream = $"../game_audio"
 	menu_audiostream = $"../menu_audio"
 	cam = $"../PlayerCamera"
@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if(not is_game_started):
 		player.position = start_baby.position
 		player.position.y = 80
+		player.position.z = start_baby.position.z + 5
 		cam.position = start_baby.position + Vector3(0,1,2)
 	if(Input.is_action_just_pressed("start_game") && !is_game_started):
 		is_game_started = true
@@ -41,5 +42,5 @@ func _process(delta: float) -> void:
 		# titel change
 		title.show_ford()
 		
-		
 		# cam zoom out on baby hit
+		 
