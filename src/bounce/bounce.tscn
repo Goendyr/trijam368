@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2ia8d8tx2rsj"]
 
 [ext_resource type="PackedScene" uid="uid://cp1qkbfefn0qv" path="res://src/sfx/blood-explosion/blood_explosion.tscn" id="1_d88iv"]
-[ext_resource type="Script" uid="uid://d6tr24y0nyrh" path="res://src/bounce/bounce.gd" id="1_gv1p4"]
+[ext_resource type="Script" path="res://src/bounce/bounce.gd" id="1_gv1p4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p7yvh"]
 size = Vector3(1, 0.1, 1)
