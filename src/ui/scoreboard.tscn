@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c148pg5pgju72"]
+
+[ext_resource type="Script" uid="uid://cntuf4mdnrvto" path="res://src/ui/scoreboard.gd" id="1_gsnw8"]
+[ext_resource type="FontFile" uid="uid://dgymv6tu7o55b" path="res://assets/fonts/Ford_Script/Fordscript.ttf" id="1_vgate"]
+[ext_resource type="Texture2D" uid="uid://bja4qx71aioyu" path="res://assets/arrow_right.png" id="2_y4ymm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4ymm"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+border_width_left = 2
+border_width_top = 5
+border_width_right = 2
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Scoreboard" type="CanvasLayer" unique_id=1001218487]
+script = ExtResource("1_gsnw8")
+
+[node name="ScoreList" type="PanelContainer" parent="." unique_id=863796085]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -20.0
+offset_right = 45.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4ymm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreList" unique_id=1645289967]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScoreList/VBoxContainer" unique_id=924535158]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_vgate")
+theme_override_font_sizes/font_size = 32
+text = "Highscores"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScoreList/VBoxContainer" unique_id=876611153]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("1_vgate")
+theme_override_fonts/bold_font = ExtResource("1_vgate")
+theme_override_fonts/bold_italics_font = ExtResource("1_vgate")
+theme_override_fonts/italics_font = ExtResource("1_vgate")
+theme_override_fonts/mono_font = ExtResource("1_vgate")
+bbcode_enabled = true
+text = "[fill]Peter 500[br]Fisch 1337[br]Ford 420[br]Andreas 999[br]hallo 200[br][/fill]
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RestartButton" type="Button" parent="ScoreList/VBoxContainer" unique_id=1895167646]
+texture_filter = 1
+layout_mode = 2
+icon = ExtResource("2_y4ymm")
+icon_alignment = 1
+
+[node name="NameEntry" type="PanelContainer" parent="." unique_id=1667575630]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4ymm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameEntry" unique_id=1532373446]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NameEntry/VBoxContainer" unique_id=201446034]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_vgate")
+text = "Enter Name"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="NameEntry/VBoxContainer" unique_id=1475049220]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vgate")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="NameButton" type="Button" parent="NameEntry/VBoxContainer" unique_id=1214564872]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_vgate")
+text = "Submit"
+
+[connection signal="pressed" from="ScoreList/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="text_submitted" from="NameEntry/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="NameEntry/VBoxContainer/NameButton" to="." method="_on_name_button_pressed"]
