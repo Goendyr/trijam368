@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b2ia8d8tx2rsj"]
+
+[ext_resource type="PackedScene" uid="uid://cp1qkbfefn0qv" path="res://src/sfx/blood-explosion/blood_explosion.tscn" id="1_d88iv"]
+[ext_resource type="Script" uid="uid://d6tr24y0nyrh" path="res://src/bounce/bounce.gd" id="1_gv1p4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p7yvh"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6do1r"]
+
+[node name="Bounce" type="Area3D" unique_id=1762008936]
+script = ExtResource("1_gv1p4")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=380926896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1353542368]
+visible = false
+mesh = SubResource("BoxMesh_p7yvh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911972231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_6do1r")
+
+[node name="BloodExplosion" parent="." unique_id=2135665493 instance=ExtResource("1_d88iv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

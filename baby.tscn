@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dl26yi7830ssl"]
+
+[ext_resource type="Script" uid="uid://citkb1i3inpvy" path="res://baby.gd" id="1_2kj0s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kj0s"]
+albedo_color = Color(0.78039217, 1, 0.36078432, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w1w5b"]
+material = SubResource("StandardMaterial3D_2kj0s")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2kj0s"]
+size = Vector3(1.085, 0.47, 1.04)
+
+[node name="baby" type="Node3D" unique_id=1271769914]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_2kj0s")
+
+[node name="body" type="Node3D" parent="." unique_id=1665708628]
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 0, 0.2406534, 0)
+
+[node name="limbs_left" type="Node3D" parent="body" unique_id=1780631289]
+transform = Transform3D(-4.2618606e-08, -1.274, 0, 0.975, -5.568831e-08, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="leg_bl" type="MeshInstance3D" parent="body/limbs_left" unique_id=455177962]
+transform = Transform3D(0.20825693, -0.20100161, 5.170765e-09, 0.10299471, 0.18557705, 0.0905306, -0.07752045, -0.13967723, 0.24101715, -0.3271794, 0.3131868, -0.3333334)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_bl2" type="MeshInstance3D" parent="body/limbs_left" unique_id=65628305]
+transform = Transform3D(0.25128207, 0, 0, 0, 0.25117737, 0, 0, 0, 0.25111112, -0.36205122, 0.46938774, -0.37111112)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_fl2" type="MeshInstance3D" parent="body/limbs_left" unique_id=1674470823]
+transform = Transform3D(0.25128207, 8.881784e-16, 0, 0, 0.18713078, 0, 0, 0, 0.25111112, -0.34358972, -0.4521193, -0.34777778)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_fl" type="MeshInstance3D" parent="body/limbs_left" unique_id=1907267868]
+transform = Transform3D(0.2376416, 0.10626991, 0.0064720884, -0.054787755, 0.2178492, -0.07240715, -0.042569842, 0.13442117, 0.22913346, -0.32717946, -0.35050556, -0.3333334)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="limbs_right" type="Node3D" parent="body" unique_id=1574665297]
+transform = Transform3D(-4.2618606e-08, -1.274, 0, 0.975, -5.568831e-08, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="leg_br" type="MeshInstance3D" parent="body/limbs_right" unique_id=1563727530]
+transform = Transform3D(0.2081238, -0.16189869, -1.9414324e-08, 0.10312133, 0.20861141, -0.15481173, 0.0776027, 0.1569879, 0.2057196, -0.32717943, 0.3131868, 0.33333337)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_br2" type="MeshInstance3D" parent="body/limbs_right" unique_id=494445074]
+transform = Transform3D(0.25128207, 0, 0, 0, 0.25117737, 0, 0, 0, 0.25111112, -0.3615833, 0.46930283, 0.37096044)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_fr2" type="MeshInstance3D" parent="body/limbs_right" unique_id=1602152251]
+transform = Transform3D(0.25128207, 0, 0, 0, 0.18713078, 0, 0, 0, 0.25111112, -0.34346122, -0.45212004, 0.34730005)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="leg_fr" type="MeshInstance3D" parent="body/limbs_right" unique_id=1874030674]
+transform = Transform3D(0.23765598, 0.07404329, 0.006552749, -0.05886094, 0.22581634, 0.12857051, 0.029607205, -0.1454061, 0.20300737, -0.3271795, -0.35050556, 0.33333337)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="head" type="MeshInstance3D" parent="body" unique_id=2008718725]
+transform = Transform3D(-2.8193847e-08, -0.645, 1.7763568e-15, 0.645, -2.8193845e-08, 9.892231e-23, 0, 3.5527137e-15, 0.64500004, 0.6576415, 0.13047521, -3.111003e-09)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="core" type="MeshInstance3D" parent="body" unique_id=758642343]
+transform = Transform3D(-3.308952e-08, -0.989, 0, 0.757, -4.3230564e-08, 0, 0, 0, 0.699, 0, -0.102556586, 0)
+mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=553233115]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=397414467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27342588, 0)
+shape = SubResource("BoxShape3D_2kj0s")
