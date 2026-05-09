@@ -29,13 +29,15 @@ var _allow_control = false
 
 func _ready():
 	velocity = Vector3.FORWARD
-	for node in get_tree().get_nodes_in_group("Bounce"):
-		if node.has_signal("body_entered"):
-			node.body_entered.connect(_on_bounce_body_entered)
-
+	
+	#for node in get_tree().get_nodes_in_group("Bounce"):
+	#	if node.has_signal("body_entered"):
+	#		node.body_entered.connect(_on_bounce_body_entered)
 
 func jump():
 	_will_jump = true
+	$"../Highscore".score_increase()
+	$Pivot/FordFocusMesh.squish()
 
 func start_control():
 	_allow_control = true
@@ -95,3 +97,7 @@ func _on_bounce_body_entered(body: Node3D) -> void:
 		body.start_control()
 	if body.has_method("jump"):
 		body.jump()
+
+
+func _on_stunt_manager_quick_time_event(idx: int) -> void:
+	$Pivot/FordFocusMesh.stunt(idx)

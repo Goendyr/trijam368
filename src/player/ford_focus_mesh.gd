@@ -7,22 +7,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	# TODO remove
-	return
-	if Input.is_anything_pressed() && !stunting:
-		stunting = true
-		$StuntTimer.start()
-		if Input.is_action_just_pressed("ArrowLeft"):
-			squish()
-		if Input.is_action_just_pressed("ArrowRight"):
-			twisting_right()
-		if Input.is_action_just_pressed("ArrowUp"):
-			forward_spin()
-		if Input.is_action_just_pressed("ArrowDown"):
-			backward_spin()
-		
 func stunt(idx: int) -> void:
 	stunting = true
 	$StuntTimer.start()
@@ -38,8 +22,10 @@ func stunt(idx: int) -> void:
 
 func squish() -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property($".", "scale", Vector3(1.2, 0.4, 1.2), 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property($".", "scale", Vector3(1.0, 1.0, 1.0), 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "scale", Vector3(1.2, 0.4, 1.2), 0.05)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector3(1.0, 1.0, 1.0), 0.15)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 
 # STUNTS
 func left_spin_y() -> void:

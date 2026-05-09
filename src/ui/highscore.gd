@@ -13,15 +13,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ArrowUp"):
-		print("pressed")
-		combo()
-		#score_increase(10)
-	if Input.is_action_just_pressed("ArrowRight"):
-		score_increase()
 	$Highscore.text = str(current_highscore)
 
-func combo() -> void:
+func combo(_id: int) -> void:
 	current_multiplyer *= 1.5;
 	var mul: RichTextLabel = combo_number_scene.instantiate()
 	mul.text = "x" + str(streak + 1)#str(float(int(current_multiplyer * 100))/100.0)
