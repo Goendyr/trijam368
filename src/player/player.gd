@@ -21,6 +21,8 @@ const camera_angle = -16
 
 @export var current_direction = Vector3.FORWARD
 
+@export var active = false
+
 signal destroyed
 
 var _will_jump = false
@@ -48,7 +50,8 @@ func _reset():
 	_allow_control = false
 
 func _physics_process(delta):
-	
+	if not active:
+		pass
 	var movement_y = velocity.y
 	var movement_xz = velocity
 	movement_xz.y = 0
@@ -76,6 +79,7 @@ func _physics_process(delta):
 		_will_jump = false
 	elif not _will_jump and is_on_floor():
 		destroyed.emit()
+		$Explosion.explode()
 
 	# Ground Velocity
 	movement_xz = movement_xz.limit_length(max_speed)
