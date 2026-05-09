@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4unwhiuqxpqy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sh265"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sh265"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sh265"]
+albedo_color = Color(0.19215687, 0.3019608, 1, 1)
+albedo_texture = SubResource("NoiseTexture2D_sh265")
+
+[sub_resource type="BoxMesh" id="BoxMesh_4flbx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sh265"]
+size = Vector3(2, 1, 2)
+
+[node name="Player" type="CharacterBody3D" unique_id=877969735]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=927598013]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=157836787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_sh265")
+surface_material_override/0 = SubResource("StandardMaterial3D_sh265")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=1620378199]
+transform = Transform3D(1, 0, 0, 0, 0.9573447, 0.28894824, 0, -0.28894824, 0.9573447, 0, 2, 3.6707816)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot" unique_id=283943930]
+transform = Transform3D(1, 0, 0, 0, 0.70511705, -0.70909095, 0, 0.70909095, 0.70511705, -0.019616842, 0.743335, -0.5965328)
+mesh = SubResource("BoxMesh_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1024866783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_sh265")
