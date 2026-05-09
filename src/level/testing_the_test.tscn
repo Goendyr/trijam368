@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cp1qkbfefn0qv" path="res://src/sfx/blood-explosion/blood_explosion.tscn" id="1_ld55a"]
 [ext_resource type="PackedScene" uid="uid://d3nwgehkkvxi3" path="res://src/player/ford_focus_mesh.tscn" id="3_bq2c8"]
 [ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="3_xppqv"]
+[ext_resource type="Script" uid="uid://cfpho87t1tjjm" path="res://src/level/baby_spawner.gd" id="5_jovve"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dr3mw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -86,5 +87,8 @@ transform = Transform3D(1, 0, 0, 0, 0.9604688, 0.2783877, 0, -0.2783877, 0.96046
 
 [node name="StuntManager" parent="." unique_id=1339176810 node_paths=PackedStringArray("object") instance=ExtResource("3_xppqv")]
 object = NodePath("../test auto")
+
+[node name="BabySpawner" type="Node3D" parent="." unique_id=841141850]
+script = ExtResource("5_jovve")
 
 [connection signal="quick_time_event" from="StuntManager" to="test auto/FordFocusMesh" method="stunt"]
