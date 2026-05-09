@@ -10,6 +10,7 @@ signal quick_time_event(idx: int)
 @export var stunt_delay: float = 0.8
 @export var quick_time: float = 1.0
 @export var slowmo: bool = true
+@export var slowmo_scale: float = 0.3
 
 
 var qte_active: bool = false
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 		if object.global_position.y > height_threshold and stunt_timer > stunt_delay:
 			qte_active = true
 			if slowmo:
-				Engine.time_scale = 0.5
+				Engine.time_scale = slowmo_scale
 			if tween:
 				tween.kill()
 			tween = get_tree().create_tween()
