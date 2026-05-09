@@ -24,7 +24,11 @@ func combo(_id: int) -> void:
 	mul.pivot_offset = mul.size/2
 	mul.global_position = $mul_numbers/Marker2D.global_position + Vector2(randf_range(-200, 200) -200, randf_range(-200, 200))
 	var tween = get_tree().create_tween()
-	tween.tween_property(mul, "scale", Vector2(1.5 + 0.3 * streak, 1.5 + 0.3 * streak), 1.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	var final: Vector2 = Vector2(3 + 0.6 * streak, 3 + 0.8 * streak)
+	tween.tween_property(mul, "scale", final, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(mul, "scale", final * 0.6, 0.33).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(mul, "scale", final * 0.6, 0.7).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+
 	tween.tween_callback(mul.queue_free)
 	$ComboAudio.pitch_scale = 1.0 * pow(1.059, 2* (streak - 1)) + randf_range(-0.005, 0.005)
 	$ComboAudio.volume_linear = 1.0 + 0.15 * streak
