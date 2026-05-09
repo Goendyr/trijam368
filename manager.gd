@@ -20,6 +20,7 @@ func _ready() -> void:
 	var start_baby_scene = preload("res://baby.tscn")
 	start_baby = start_baby_scene.instantiate()
 	get_tree().root.add_child.call_deferred(start_baby)
+	title.visible = true
 	#player = $"../FordFocusMesh"
 	#TODO disable following
 
@@ -28,7 +29,6 @@ func _process(delta: float) -> void:
 	if(not is_game_started):
 		player.position = start_baby.position
 		player.position.y = 80
-		player.position.z = start_baby.position.z + 5
 		cam.position = start_baby.position + Vector3(0,1,2)
 	if(Input.is_action_just_pressed("start_game") && !is_game_started):
 		is_game_started = true
@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 		
 		# titel change
 		title.show_ford()
-		
-		# cam zoom out on baby hit
-		 
+			
+	if player._allow_control:
+		cam.process_mode = Node.PROCESS_MODE_ALWAYS
+		title.visible = false

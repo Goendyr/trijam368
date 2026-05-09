@@ -314,10 +314,12 @@ transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 0, 1.5923395, 0)
 
 [node name="game_audio" type="AudioStreamPlayer" parent="." unique_id=1879346937]
 stream = SubResource("AudioStreamPlaylist_mlv6i")
+bus = &"Music"
 
 [node name="menu_audio" type="AudioStreamPlayer" parent="." unique_id=1958920694]
 stream = SubResource("AudioStreamPlaylist_tb146")
 autoplay = true
+bus = &"Music"
 
 [connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
 [connection signal="quick_time_event" from="StuntManager" to="Player" method="_on_stunt_manager_quick_time_event"]
