@@ -25,4 +25,5 @@ mesh = SubResource("TextMesh_f3bli")
 
 [node name="Ford" type="MeshInstance3D" parent="." unique_id=1090075944]
 transform = Transform3D(0.091343895, -0.040697582, 0, 0.040697582, 0.091343895, 0, 0, 0, 0.1, -0.6912585, 0.16428033, 0)
+visible = false
 mesh = SubResource("TextMesh_oaplp")

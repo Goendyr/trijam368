@@ -17,3 +17,4 @@ func show_ford() -> void:
 	tween.set_parallel()
 	tween.tween_property($Ford, "rotation", $Ford.rotation + Vector3(0, 0, -6*PI), 1.0)
 	tween.tween_property($Ford, "scale", Vector3(1,1,1), 1.0)
+	
