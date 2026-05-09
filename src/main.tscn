@@ -86,7 +86,7 @@ object = NodePath("../Player")
 height_threshold = 2.0
 stunt_delay = 0.6
 quick_time = 0.5
-slowmo = false
+slowmo_scale = 0.8
 
 [node name="Highscore" parent="." unique_id=461398107 instance=ExtResource("8_5mrjc")]
 
