@@ -1,7 +1,7 @@
 extends Node3D
 
 @export
-var crawl_speed = 01
+var crawl_speed = 3.3
 
 var crawl_l: Tween
 var crawl_r: Tween

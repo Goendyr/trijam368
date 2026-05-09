@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlr6r2ttvehst"]
 
 [ext_resource type="PackedScene" uid="uid://dl26yi7830ssl" path="res://baby.tscn" id="1_khdpc"]
+[ext_resource type="PackedScene" uid="uid://4unwhiuqxpqy" path="res://src/player/player.tscn" id="2_kmwmi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +32,8 @@ size = 17.883
 
 [node name="baby" parent="." unique_id=1271769914 instance=ExtResource("1_khdpc")]
 transform = Transform3D(-0.83782357, 0, 0.54594105, 0, 1, 0, -0.54594105, 0, -0.83782357, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=877969735 instance=ExtResource("2_kmwmi")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210736763]
 transform = Transform3D(-0.3728752, -0.0022391516, 9.403443, 0.07227692, 0.89206237, 0.028584424, 7.176837, -0.009100171, 0.48827153, 0, 0, 0)
