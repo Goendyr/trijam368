@@ -7,10 +7,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-		
+
 func stunt(idx: int) -> void:
 	stunting = true
 	$StuntTimer.start()
@@ -26,8 +23,10 @@ func stunt(idx: int) -> void:
 
 func squish() -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property($".", "scale", Vector3(1.2, 0.4, 1.2), 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property($".", "scale", Vector3(1.0, 1.0, 1.0), 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "scale", Vector3(1.2, 0.4, 1.2), 0.05)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector3(1.0, 1.0, 1.0), 0.15)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 
 # STUNTS
 func left_spin_y() -> void:
