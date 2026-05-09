@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ch35jsx5ouup6"]
+
+[ext_resource type="Script" uid="uid://bsgdybfoxhdtc" path="res://src/level/testing_the_test.gd" id="1_dr3mw"]
+[ext_resource type="PackedScene" uid="uid://cp1qkbfefn0qv" path="res://src/sfx/blood-explosion/blood_explosion.tscn" id="1_ld55a"]
+[ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="3_xppqv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dr3mw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xppqv"]
+sky_material = SubResource("ProceduralSkyMaterial_dr3mw")
+
+[sub_resource type="Environment" id="Environment_bq2c8"]
+background_mode = 2
+sky = SubResource("Sky_xppqv")
+tonemap_mode = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dr3mw"]
+
+[sub_resource type="Gradient" id="Gradient_xppqv"]
+colors = PackedColorArray(0.1013472, 0.27293867, 0, 1, 0.17865276, 1.92523e-05, 0.7115522, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bq2c8"]
+frequency = 0.072
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jovve"]
+width = 2048
+height = 2048
+noise = SubResource("FastNoiseLite_bq2c8")
+color_ramp = SubResource("Gradient_xppqv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jiie"]
+albedo_texture = SubResource("NoiseTexture2D_jovve")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iirlk"]
+material = SubResource("StandardMaterial3D_3jiie")
+size = Vector2(200, 200)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dr3mw"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dr3mw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xppqv"]
+
+[node name="TestingTheTest" type="Node3D" unique_id=1856122870]
+script = ExtResource("1_dr3mw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1981517136]
+environment = SubResource("Environment_bq2c8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=691575715]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="BloodExplosion" parent="." unique_id=2135665493 instance=ExtResource("1_ld55a")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4972483, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=968047127]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=498590206]
+shape = SubResource("WorldBoundaryShape3D_dr3mw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=833912754]
+mesh = SubResource("PlaneMesh_iirlk")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Floor" unique_id=235001320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(200, 1, 200)
+
+[node name="test auto" type="RigidBody3D" parent="." unique_id=2107955319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+physics_material_override = SubResource("PhysicsMaterial_dr3mw")
+linear_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test auto" unique_id=2093426947]
+shape = SubResource("SphereShape3D_dr3mw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="test auto" unique_id=250252379]
+mesh = SubResource("SphereMesh_xppqv")
+
+[node name="Camera3D" type="Camera3D" parent="test auto" unique_id=895765807]
+transform = Transform3D(1, 0, 0, 0, 0.9604688, 0.2783877, 0, -0.2783877, 0.9604688, 0, 1.0640924, 2.7296278)
+
+[node name="StuntManager" parent="." unique_id=1339176810 node_paths=PackedStringArray("object") instance=ExtResource("3_xppqv")]
+object = NodePath("../test auto")
