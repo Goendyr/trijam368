@@ -29,8 +29,10 @@ var _will_jump = false
 
 var _allow_control = false
 
+var _was_on_floor = false
+
 func _ready():
-	velocity = Vector3.FORWARD
+	velocity = Vector3.ZERO
 	
 	#for node in get_tree().get_nodes_in_group("Bounce"):
 	#	if node.has_signal("body_entered"):
@@ -42,7 +44,9 @@ func jump():
 	$Pivot/FordFocusMesh.squish()
 
 func start_control():
-	_allow_control = true
+	if not _allow_control:
+		_allow_control = true
+		velocity = Vector3.FORWARD
 
 func _reset():
 	current_direction = Vector3.FORWARD
@@ -78,8 +82,14 @@ func _physics_process(delta):
 		movement_xz += current_direction * boost
 		_will_jump = false
 	elif not _will_jump and is_on_floor():
-		destroyed.emit()
-		$Explosion.explode()
+		if _was_on_floor:
+			destroyed.emit()
+			$Explosion.explode()
+		else:
+			_was_on_floor = true
+	else:
+		_was_on_floor = false
+			
 
 	# Ground Velocity
 	movement_xz = movement_xz.limit_length(max_speed)
