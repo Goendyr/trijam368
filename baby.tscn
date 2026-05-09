@@ -8,11 +8,15 @@ albedo_color = Color(0.78039217, 1, 0.36078432, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_w1w5b"]
 material = SubResource("StandardMaterial3D_2kj0s")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2kj0s"]
+size = Vector3(1.105, 0.56, 0.98)
+
 [node name="baby" type="Node3D" unique_id=1271769914]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_2kj0s")
 
 [node name="body" type="Node3D" parent="." unique_id=1665708628]
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 0, 0.2406534, 0)
 
 [node name="limbs_left" type="Node3D" parent="body" unique_id=1780631289]
 transform = Transform3D(-4.2618606e-08, -1.274, 0, 0.975, -5.568831e-08, 0, 0, 0, 0.9, 0, 0, 0)
@@ -59,3 +63,9 @@ mesh = SubResource("SphereMesh_w1w5b")
 [node name="core" type="MeshInstance3D" parent="body" unique_id=758642343]
 transform = Transform3D(-3.308952e-08, -0.989, 0, 0.757, -4.3230564e-08, 0, 0, 0, 0.699, 0, -0.102556586, 0)
 mesh = SubResource("SphereMesh_w1w5b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1974139154]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=875232205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29696548, 0)
+shape = SubResource("BoxShape3D_2kj0s")

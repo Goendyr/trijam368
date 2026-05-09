@@ -25,34 +25,24 @@ func _ready() -> void:
 	limbs_right = $body/limbs_right
 	body = $"body"
 	
-	#crawl forward & change direction in random intervals
-	# randomly generate a starting crawling direction
-	#turn = get_tree().create_tween().set_loops()
-	#turn.tween_callback(gen_set_crawl_dir)
-	#turn.tween_interval(3)
-	#move = get_tree().create_tween().set_loops()
-	#move.tween_property($".", "position", \
-	#global_position + crawl_dir, crawl_speed)
-	
-	
 	# make infinitely looping crawl animation loop
 	#legs
 	crawl_l = get_tree().create_tween().set_loops() 
 	crawl_l.set_parallel(false)
 	crawl_l.tween_property(limbs_left, "position", \
-	position + Vector3(-0.13, 0.0, 0.0), crawl_speed) \
+	limbs_left.position + Vector3(-0.13, 0.0, 0.0), crawl_speed) \
 	.set_trans(Tween.TRANS_QUAD)
 	crawl_l.tween_property(limbs_left, "position", \
-	position +Vector3(0.0, 0.0, 0.0), crawl_speed) \
+	limbs_left.position +Vector3(0.0, 0.0, 0.0), crawl_speed) \
 	.set_trans(Tween.TRANS_QUAD)
 	
 	crawl_r = get_tree().create_tween().set_loops() 
 	crawl_r.set_parallel(false)
 	crawl_r.tween_property(limbs_right, "position", \
-	position +Vector3(0.13, 0.0, 0.0), crawl_speed) \
+	limbs_right.position +Vector3(0.13, 0.0, 0.0), crawl_speed) \
 	.set_trans(Tween.TRANS_QUAD)
 	crawl_r.tween_property(limbs_right, "position", \
-	position +Vector3(0.0, 0.0, 0.0), crawl_speed) \
+	limbs_right.position +Vector3(0.0, 0.0, 0.0), crawl_speed) \
 	.set_trans(Tween.TRANS_QUAD)
 	
 	# body wiggle
@@ -85,3 +75,7 @@ func gen_set_crawl_dir() -> void:
 	#rotate(Vector3.UP, 90)
 	await get_tree().create_timer(turn_frequency).timeout
 	gen_set_crawl_dir()
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
