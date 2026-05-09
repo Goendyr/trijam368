@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://duqewr7mnao23"]
+
+[ext_resource type="Script" uid="uid://bmftp8j7kg78j" path="res://src/ui/highscore.gd" id="1_wp0ou"]
+[ext_resource type="FontFile" uid="uid://dgymv6tu7o55b" path="res://assets/fonts/Ford_Script/Fordscript.ttf" id="2_iwnj8"]
+[ext_resource type="AudioStream" uid="uid://dl4vivjiq4dur" path="res://assets/audio/sfx/combo/gargamel10-sword-slashing-game-sound-effect-1-379228.mp3" id="3_iwnj8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_glq8l"]
+streams_count = 1
+stream_0/stream = ExtResource("3_iwnj8")
+
+[node name="Highscore" type="CanvasLayer" unique_id=461398107]
+script = ExtResource("1_wp0ou")
+
+[node name="Highscore" type="RichTextLabel" parent="." unique_id=359420379]
+texture_filter = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = -1.0
+offset_right = 99.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_iwnj8")
+theme_override_font_sizes/normal_font_size = 50
+text = "12"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="mul_numbers" type="Node2D" parent="." unique_id=211943769]
+
+[node name="Marker2D" type="Marker2D" parent="mul_numbers" unique_id=888697003]
+position = Vector2(576, 242)
+gizmo_extents = 29.0
+
+[node name="ComboAudio" type="AudioStreamPlayer" parent="." unique_id=932462092]
+stream = SubResource("AudioStreamRandomizer_glq8l")
