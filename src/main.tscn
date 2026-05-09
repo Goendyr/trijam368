@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cfpho87t1tjjm" path="res://src/level/baby_spawner.gd" id="4_fyndt"]
 [ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="5_kmhfv"]
-[ext_resource type="PackedScene" uid="uid://c24mnonn1e83p" path="res://src/ui/title.tscn" id="5_mgm53"]
+[ext_resource type="PackedScene" uid="uid://qwyu6vpekr0q" path="res://src/ui/title.tscn" id="5_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cn3xh5kfcjv82" path="res://assets/audio/music/mrclaps-this-heavy-metal-492569.mp3" id="6_mgm53"]
 [ext_resource type="PackedScene" uid="uid://ceu00tan4r7il" path="res://src/environment/tree.tscn" id="6_rlaii"]
 [ext_resource type="PackedScene" uid="uid://djsrygrl0eir1" path="res://src/environment/slide.tscn" id="7_5mrjc"]

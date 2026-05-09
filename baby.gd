@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 	# turn
 	if crawl_dir != Vector3.ZERO:
 		var target_basis = Basis.looking_at(crawl_dir.rotated(Vector3.UP, deg_to_rad(90)))
-		basis = basis.slerp(target_basis, delta * turn_speed)
+		basis = basis.orthonormalized().slerp(target_basis, delta * turn_speed)
 
 func gen_set_crawl_dir() -> void:
 	crawl_dir = Vector3(\
@@ -85,8 +85,17 @@ func _on_area_3d_body_entered(body_: Node3D) -> void:
 	if body_.has_method("jump"):
 		body_.jump()
 		$BloodExplosion.splatter()
+		crawl_l.stop()
+		crawl_r.stop()
+		wiggle.stop()
 		$body.hide()
 		set_deferred("$Area3D.monitoring ", false)
 		$AudioStreamPlayer3D.play()
 		await get_tree().create_timer(60.0).timeout
 		self.queue_free()
+
+
+func _exit_tree() -> void:
+	crawl_l.kill()
+	crawl_r.kill()
+	wiggle.kill()

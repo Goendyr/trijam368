@@ -148,6 +148,9 @@ scale_min = 0.5
 scale_curve = SubResource("CurveTexture_ydypp")
 color_ramp = SubResource("GradientTexture1D_1684m")
 color_initial_ramp = SubResource("GradientTexture1D_rxjxu")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
 [sub_resource type="Gradient" id="Gradient_rjbc7"]
 offsets = PackedFloat32Array(0.6321839, 0.6695402)
