@@ -92,21 +92,20 @@ func _physics_process(delta):
 	else:
 		_was_on_floor = false
 			
-
+	
 	# Ground Velocity
 	movement_xz = movement_xz.limit_length(max_speed)
-
+	
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		movement_y = movement_y - (fall_acceleration * delta)
-
-
+	
+	
 	velocity = movement_xz
 	velocity.y  = movement_y
 	# Moving the Character
 	move_and_slide()
 
-		
 
 func _on_bounce_body_entered(body: Node3D) -> void:
 	if body.has_method("start_control"):

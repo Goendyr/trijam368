@@ -86,7 +86,7 @@ func _on_area_3d_body_entered(body_: Node3D) -> void:
 		body_.jump()
 		$BloodExplosion.splatter()
 		$body.hide()
-		$Area3D.monitoring = false
+		set_deferred("$Area3D.monitoring ", false)
 		$AudioStreamPlayer3D.play()
 		await get_tree().create_timer(60.0).timeout
 		self.queue_free()

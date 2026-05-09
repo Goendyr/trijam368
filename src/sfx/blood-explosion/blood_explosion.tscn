@@ -2,6 +2,39 @@
 
 [ext_resource type="Script" uid="uid://c63cg665lf5pn" path="res://src/sfx/blood-explosion/blood_explosion.gd" id="1_tv4a2"]
 
+[sub_resource type="Gradient" id="Gradient_3ryhq"]
+colors = PackedColorArray(1, 0.38795555, 0.3197254, 1, 0.55952305, 2.430603e-06, 2.8878452e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tv4a2"]
+gradient = SubResource("Gradient_3ryhq")
+
+[sub_resource type="Gradient" id="Gradient_lavb5"]
+colors = PackedColorArray(0.39748234, 5.4147097e-07, 2.1658838e-07, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3gann"]
+gradient = SubResource("Gradient_lavb5")
+
+[sub_resource type="Curve" id="Curve_rjbc7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.239726), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ik4o0"]
+curve = SubResource("Curve_rjbc7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3ryhq"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.4
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+scale_min = 0.29999998
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_ik4o0")
+color_ramp = SubResource("GradientTexture1D_3gann")
+color_initial_ramp = SubResource("GradientTexture1D_tv4a2")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rld8"]
 transparency = 1
 vertex_color_use_as_albedo = true
@@ -14,15 +47,29 @@ height = 0.2
 radial_segments = 8
 rings = 0
 
-[sub_resource type="Curve" id="Curve_rjbc7"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.239726), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Gradient" id="Gradient_hy4sb"]
+offsets = PackedFloat32Array(0, 0.10465116, 1)
+colors = PackedColorArray(1, 1, 0.14509805, 1, 1, 0.11372549, 0, 1, 0.51375306, 1.11904e-06, 1.92523e-07, 1)
 
-[sub_resource type="Gradient" id="Gradient_lavb5"]
-colors = PackedColorArray(0.39748234, 5.4147097e-07, 2.1658838e-07, 1, 1, 0, 0, 1)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5s56u"]
+gradient = SubResource("Gradient_hy4sb")
 
-[sub_resource type="Gradient" id="Gradient_3ryhq"]
-colors = PackedColorArray(1, 0.38795555, 0.3197254, 1, 0.55952305, 2.430603e-06, 2.8878452e-07, 1)
+[sub_resource type="Curve" id="Curve_h4xcg"]
+_data = [Vector2(0, 0), 0.0, 12.309197, 0, 0, Vector2(0.08108109, 0.47945207), 0.0, 0.0, 0, 0, Vector2(0.5162162, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lavb5"]
+curve = SubResource("Curve_h4xcg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_45at5"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+spread = 180.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.59999996
+scale_curve = SubResource("CurveTexture_lavb5")
+color_ramp = SubResource("GradientTexture1D_5s56u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmyvr"]
 transparency = 1
@@ -33,13 +80,34 @@ material = SubResource("StandardMaterial3D_mmyvr")
 radial_segments = 8
 rings = 4
 
-[sub_resource type="Curve" id="Curve_h4xcg"]
-_data = [Vector2(0, 0), 0.0, 12.309197, 0, 0, Vector2(0.08108109, 0.47945207), 0.0, 0.0, 0, 0, Vector2(0.5162162, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Gradient" id="Gradient_igdio"]
+colors = PackedColorArray(0.26657522, 0.2665752, 0.2665752, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rjbc7"]
+gradient = SubResource("Gradient_igdio")
+
+[sub_resource type="Gradient" id="Gradient_vfur8"]
+colors = PackedColorArray(0.66245234, 0.66245234, 0.6624523, 1, 0.66656864, 0.6665687, 0.66656864, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_guj4i"]
+gradient = SubResource("Gradient_vfur8")
+
+[sub_resource type="Curve" id="Curve_8r4xp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.32702702, 0.8630137), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_hy4sb"]
-offsets = PackedFloat32Array(0, 0.10465116, 1)
-colors = PackedColorArray(1, 1, 0.14509805, 1, 1, 0.11372549, 0, 1, 0.51375306, 1.11904e-06, 1.92523e-07, 1)
+[sub_resource type="CurveTexture" id="CurveTexture_hxn5d"]
+curve = SubResource("Curve_8r4xp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5rld8"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 0.5
+gravity = Vector3(0, 2, 0)
+scale_curve = SubResource("CurveTexture_hxn5d")
+color_ramp = SubResource("GradientTexture1D_guj4i")
+color_initial_ramp = SubResource("GradientTexture1D_rjbc7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w43v4"]
 transparency = 1
@@ -50,15 +118,36 @@ material = SubResource("StandardMaterial3D_w43v4")
 radial_segments = 8
 rings = 4
 
-[sub_resource type="Curve" id="Curve_8r4xp"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.32702702, 0.8630137), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Gradient" id="Gradient_tv4a2"]
+colors = PackedColorArray(0.5595232, 1.2754649e-06, 3.3691526e-07, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rxjxu"]
+gradient = SubResource("Gradient_tv4a2")
+
+[sub_resource type="Gradient" id="Gradient_ik4o0"]
+colors = PackedColorArray(0.86343604, 5.318448e-06, 7.70092e-07, 1, 0.5333241, 1.6725436e-06, 1.4439226e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1684m"]
+gradient = SubResource("Gradient_ik4o0")
+
+[sub_resource type="Curve" id="Curve_5s56u"]
+_data = [Vector2(1e-05, 0.77397263), 0.0, 0.0, 0, 0, Vector2(0.7972973, 0.7671233), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_vfur8"]
-colors = PackedColorArray(0.66245234, 0.66245234, 0.6624523, 1, 0.66656864, 0.6665687, 0.66656864, 1)
+[sub_resource type="CurveTexture" id="CurveTexture_ydypp"]
+curve = SubResource("Curve_5s56u")
 
-[sub_resource type="Gradient" id="Gradient_igdio"]
-colors = PackedColorArray(0.26657522, 0.2665752, 0.2665752, 1, 1, 1, 1, 1)
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hy4sb"]
+emission_shape = 1
+emission_sphere_radius = 0.7
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ydypp")
+color_ramp = SubResource("GradientTexture1D_1684m")
+color_initial_ramp = SubResource("GradientTexture1D_rxjxu")
 
 [sub_resource type="Gradient" id="Gradient_rjbc7"]
 offsets = PackedFloat32Array(0.6321839, 0.6695402)
@@ -79,59 +168,29 @@ albedo_texture = SubResource("GradientTexture2D_guj4i")
 material = SubResource("StandardMaterial3D_hxn5d")
 size = Vector2(1, 1)
 
-[sub_resource type="Curve" id="Curve_5s56u"]
-_data = [Vector2(1e-05, 0.77397263), 0.0, 0.0, 0, 0, Vector2(0.7972973, 0.7671233), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_ik4o0"]
-colors = PackedColorArray(0.86343604, 5.318448e-06, 7.70092e-07, 1, 0.5333241, 1.6725436e-06, 1.4439226e-07, 1)
-
-[sub_resource type="Gradient" id="Gradient_tv4a2"]
-colors = PackedColorArray(0.5595232, 1.2754649e-06, 3.3691526e-07, 1, 1, 0, 0, 1)
-
 [node name="BloodExplosion" type="Node3D" unique_id=2135665493]
 script = ExtResource("1_tv4a2")
 
-[node name="Splatter" type="CPUParticles3D" parent="." unique_id=337474562]
+[node name="Splatter" type="GPUParticles3D" parent="." unique_id=1959089517]
 unique_name_in_owner = true
 emitting = false
 amount = 32
 one_shot = true
 explosiveness = 0.75
 fixed_fps = 60
-visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
-mesh = SubResource("CylinderMesh_rxjxu")
-emission_shape = 1
-emission_sphere_radius = 0.4
-particle_flag_align_y = true
-direction = Vector3(0, 1, 0)
-spread = 60.0
-initial_velocity_min = 3.0
-initial_velocity_max = 7.0
-scale_amount_min = 0.29999998
-scale_amount_max = 0.7
-scale_amount_curve = SubResource("Curve_rjbc7")
-color_ramp = SubResource("Gradient_lavb5")
-color_initial_ramp = SubResource("Gradient_3ryhq")
+process_material = SubResource("ParticleProcessMaterial_3ryhq")
+draw_pass_1 = SubResource("CylinderMesh_rxjxu")
 
-[node name="Boom" type="CPUParticles3D" parent="." unique_id=675899027]
+[node name="Boom" type="GPUParticles3D" parent="." unique_id=307720336]
 unique_name_in_owner = true
 emitting = false
 one_shot = true
 explosiveness = 0.9
 fixed_fps = 60
-visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
-mesh = SubResource("SphereMesh_l1sak")
-emission_shape = 1
-emission_sphere_radius = 0.4
-spread = 180.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 2.0
-scale_amount_min = 0.59999996
-scale_amount_curve = SubResource("Curve_h4xcg")
-color_ramp = SubResource("Gradient_hy4sb")
+process_material = SubResource("ParticleProcessMaterial_45at5")
+draw_pass_1 = SubResource("SphereMesh_l1sak")
 
-[node name="Smoke" type="CPUParticles3D" parent="." unique_id=783013206]
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1778920614]
 unique_name_in_owner = true
 emitting = false
 amount = 16
@@ -139,33 +198,15 @@ lifetime = 3.0
 one_shot = true
 explosiveness = 0.75
 fixed_fps = 60
-visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
-mesh = SubResource("SphereMesh_lo4ts")
-emission_shape = 1
-emission_sphere_radius = 0.4
-direction = Vector3(0, 1, 0)
-gravity = Vector3(0, 2, 0)
-initial_velocity_max = 0.5
-scale_amount_curve = SubResource("Curve_8r4xp")
-color_ramp = SubResource("Gradient_vfur8")
-color_initial_ramp = SubResource("Gradient_igdio")
+process_material = SubResource("ParticleProcessMaterial_5rld8")
+draw_pass_1 = SubResource("SphereMesh_lo4ts")
 
-[node name="DecalsZuhause" type="CPUParticles3D" parent="." unique_id=1840971955]
+[node name="DecalsZuhause" type="GPUParticles3D" parent="." unique_id=11684783]
 unique_name_in_owner = true
 emitting = false
 lifetime = 64.0
 one_shot = true
 explosiveness = 0.99
 fixed_fps = 60
-visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
-mesh = SubResource("PlaneMesh_5rld8")
-emission_shape = 1
-emission_sphere_radius = 0.7
-direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 2.0
-initial_velocity_max = 2.0
-scale_amount_min = 0.5
-scale_amount_curve = SubResource("Curve_5s56u")
-color_ramp = SubResource("Gradient_ik4o0")
-color_initial_ramp = SubResource("Gradient_tv4a2")
+process_material = SubResource("ParticleProcessMaterial_hy4sb")
+draw_pass_1 = SubResource("PlaneMesh_5rld8")
