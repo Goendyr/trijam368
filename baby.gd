@@ -77,5 +77,9 @@ func gen_set_crawl_dir() -> void:
 	gen_set_crawl_dir()
 
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	pass # Replace with function body.
+func _on_area_3d_body_entered(body_: Node3D) -> void:
+	if body_.has_method("start_control"):
+		body_.start_control()
+	if body_.has_method("jump"):
+		body_.jump()
+		$BloodExplosion.splatter()

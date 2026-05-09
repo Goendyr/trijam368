@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://dl26yi7830ssl"]
 
 [ext_resource type="Script" uid="uid://citkb1i3inpvy" path="res://baby.gd" id="1_2kj0s"]
+[ext_resource type="PackedScene" uid="uid://cp1qkbfefn0qv" path="res://src/sfx/blood-explosion/blood_explosion.tscn" id="2_w1w5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1w5b"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+grow = true
+grow_amount = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kj0s"]
+next_pass = SubResource("StandardMaterial3D_w1w5b")
 albedo_color = Color(0.78039217, 1, 0.36078432, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_w1w5b"]
@@ -70,3 +79,7 @@ mesh = SubResource("SphereMesh_w1w5b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=397414467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27342588, 0)
 shape = SubResource("BoxShape3D_2kj0s")
+
+[node name="BloodExplosion" parent="." unique_id=2135665493 instance=ExtResource("2_w1w5b")]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Highscore.text = str(current_highscore)
 
-func combo() -> void:
+func combo(_id: int) -> void:
 	current_multiplyer *= 1.5;
 	var mul: RichTextLabel = combo_number_scene.instantiate()
 	mul.text = "x" + str(streak + 1)#str(float(int(current_multiplyer * 100))/100.0)
