@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c24mnonn1e83p"]
+
+[ext_resource type="Script" uid="uid://wxgn35nwiu6j" path="res://src/ui/title.gd" id="1_oaplp"]
+[ext_resource type="FontFile" uid="uid://dgymv6tu7o55b" path="res://assets/fonts/Ford_Script/Fordscript.ttf" id="2_qkh5q"]
+
+[sub_resource type="TextMesh" id="TextMesh_f3bli"]
+text = "focus
+on the small stuff"
+font = ExtResource("2_qkh5q")
+font_size = 26
+curve_step = 0.1
+depth = 0.06
+
+[sub_resource type="TextMesh" id="TextMesh_oaplp"]
+text = "Ford"
+font = ExtResource("2_qkh5q")
+font_size = 36
+curve_step = 0.1
+
+[node name="Title" type="Node3D" unique_id=798211030]
+script = ExtResource("1_oaplp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1448526448]
+mesh = SubResource("TextMesh_f3bli")
+
+[node name="Ford" type="MeshInstance3D" parent="." unique_id=1090075944]
+transform = Transform3D(0.091343895, -0.040697582, 0, 0.040697582, 0.091343895, 0, 0, 0, 0.1, -0.6912585, 0.16428033, 0)
+mesh = SubResource("TextMesh_oaplp")

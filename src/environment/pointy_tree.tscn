@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b4no1mifq5dq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkueu"]
+albedo_color = Color(0.44705883, 0.32941177, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mye50"]
+albedo_color = Color(0.050980393, 0.4862745, 0.6039216, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d5fxh"]
+top_radius = 0.0
+bottom_radius = 0.2
+height = 1.0
+
+[node name="PointyTree" type="Node3D" unique_id=816889768]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1368841044]
+transform = Transform3D(1, 0, 0, 0, 1.0389979, 0, 0, 0, 1, 0, 0.46041948, 0)
+material_override = SubResource("StandardMaterial3D_kkueu")
+radius = 0.059
+height = 0.9098867
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=989941388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3693475, 0)
+material_override = SubResource("StandardMaterial3D_mye50")
+mesh = SubResource("CylinderMesh_d5fxh")

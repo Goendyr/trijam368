@@ -9,18 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# TODO remove
-	if Input.is_anything_pressed() && !stunting:
-		stunting = true
-		$StuntTimer.start()
-		if Input.is_action_just_pressed("ArrowLeft"):
-			squish()
-		if Input.is_action_just_pressed("ArrowRight"):
-			twisting_right()
-		if Input.is_action_just_pressed("ArrowUp"):
-			forward_spin()
-		if Input.is_action_just_pressed("ArrowDown"):
-			backward_spin()
+	pass
 		
 func stunt(idx: int) -> void:
 	stunting = true

@@ -13,12 +13,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ArrowUp"):
-		print("pressed")
-		combo()
-		#score_increase(10)
-	if Input.is_action_just_pressed("ArrowRight"):
-		score_increase()
 	$Highscore.text = str(current_highscore)
 
 func combo() -> void:
