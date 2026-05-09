@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c22socbxf0cm3"]
 
 [ext_resource type="PackedScene" uid="uid://d3nwgehkkvxi3" path="res://src/player/ford_focus_mesh.tscn" id="1_p5d6n"]
+[ext_resource type="PackedScene" uid="uid://c24mnonn1e83p" path="res://src/ui/title.tscn" id="2_fuded"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5d6n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,7 +21,12 @@ tonemap_mode = 2
 environment = SubResource("Environment_si760")
 
 [node name="FordFocusMesh" parent="." unique_id=624348256 instance=ExtResource("1_p5d6n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0896008, 0)
+transform = Transform3D(0.9922779, 0.12403446, 0, -0.12403446, 0.9922779, 0, 0, 0, 1, 0.12834772, 1.1685802, -0.1959827)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1115513565]
-transform = Transform3D(0.6224747, -0.038555764, 0.7816897, -0.09661147, 0.98736125, 0.12563385, -0.776654, -0.1537241, 0.6108826, 1.7167156, 1.5245947, 1.1497843)
+transform = Transform3D(0.6173667, -0.0884288, 0.7816897, -0.016993769, 0.9919311, 0.12563385, -0.78649193, -0.09084603, 0.6108825, 2.8137174, 1.8378859, 2.0041203)
+fov = 62.1
+near = 0.015
+
+[node name="Title" parent="." unique_id=798211030 instance=ExtResource("2_fuded")]
+transform = Transform3D(0.6156615, 0, 0.78801066, 0, 1, 0, -0.7880107, 0, 0.61566144, 1.6975005, 2.0166686, 1.0731725)
