@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="trijam368"
-run/main_scene="uid://bytqh4pfng4q4"
+run/main_scene="uid://df83pwkbi7bhe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

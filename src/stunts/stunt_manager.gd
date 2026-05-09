@@ -28,6 +28,8 @@ var hit_left: bool = false
 var hit_right: bool = false
 var multikey: bool = false
 
+var disabled: bool = true
+
 
 @onready var top: TextureRect = %Top
 @onready var left: TextureRect = %Left
@@ -39,6 +41,8 @@ var multikey: bool = false
 
 
 func _process(delta: float) -> void:
+	if disabled:
+		return
 	if not qte_active:
 		stunt_timer += delta
 		if object.global_position.y > height_threshold and stunt_timer > stunt_delay:

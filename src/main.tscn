@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://uwkq38h8cwju" path="res://src/player/player.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://3op00kydd16q" path="res://src/player/player_camera.gd" id="4_3cfgd"]
 [ext_resource type="Script" uid="uid://cfpho87t1tjjm" path="res://src/level/baby_spawner.gd" id="4_fyndt"]
-[ext_resource type="Script" path="res://manager.gd" id="5_kf8lf"]
+[ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://c24mnonn1e83p" path="res://src/ui/title.tscn" id="5_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cn3xh5kfcjv82" path="res://assets/audio/music/mrclaps-this-heavy-metal-492569.mp3" id="6_mgm53"]
@@ -88,6 +88,7 @@ size = Vector3(200, 1, 200)
 [node name="Player" parent="." unique_id=877969735 instance=ExtResource("1_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
 script = ExtResource("2_h2yge")
+jump_height = 12.0
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=992301537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68507814, 2.3233607)

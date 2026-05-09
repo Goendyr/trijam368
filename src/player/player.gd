@@ -22,6 +22,7 @@ const camera_angle = -16
 @export var current_direction = Vector3.FORWARD
 
 @export var active = false
+@export var jump_height: float = 14.0
 
 signal destroyed
 
@@ -47,6 +48,7 @@ func start_control():
 	if not _allow_control:
 		_allow_control = true
 		velocity = Vector3.FORWARD
+		$"../StuntManager".disabled = false
 
 func _reset():
 	current_direction = Vector3.FORWARD
@@ -78,7 +80,7 @@ func _physics_process(delta):
 		current_direction = movement_xz.normalized()
 	
 	if _will_jump and is_on_floor():
-		movement_y += 10
+		movement_y += jump_height
 		movement_xz += current_direction * boost
 		_will_jump = false
 	elif not _will_jump and is_on_floor():
