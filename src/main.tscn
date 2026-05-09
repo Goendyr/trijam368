@@ -1,23 +1,22 @@
-[gd_scene format=3 uid="uid://d2mnnuriijoda"]
+[gd_scene format=3 uid="uid://df83pwkbi7bhe"]
 
 [ext_resource type="PackedScene" uid="uid://4unwhiuqxpqy" path="res://src/player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dcitgpspf07k3" path="res://src/main.gd" id="1_kf8lf"]
 [ext_resource type="Script" uid="uid://uwkq38h8cwju" path="res://src/player/player.gd" id="2_h2yge"]
-[ext_resource type="Script" path="res://src/player/player_camera.gd" id="4_3cfgd"]
+[ext_resource type="Script" uid="uid://3op00kydd16q" path="res://src/player/player_camera.gd" id="4_3cfgd"]
 [ext_resource type="Script" uid="uid://cfpho87t1tjjm" path="res://src/level/baby_spawner.gd" id="4_fyndt"]
-[ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
+[ext_resource type="Script" path="res://manager.gd" id="5_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="5_kmhfv"]
-[ext_resource type="PackedScene" uid="uid://qwyu6vpekr0q" path="res://src/ui/title.tscn" id="5_mgm53"]
+[ext_resource type="PackedScene" uid="uid://c24mnonn1e83p" path="res://src/ui/title.tscn" id="5_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cn3xh5kfcjv82" path="res://assets/audio/music/mrclaps-this-heavy-metal-492569.mp3" id="6_mgm53"]
 [ext_resource type="PackedScene" uid="uid://ceu00tan4r7il" path="res://src/environment/tree.tscn" id="6_rlaii"]
 [ext_resource type="PackedScene" uid="uid://djsrygrl0eir1" path="res://src/environment/slide.tscn" id="7_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://dsr86gvsy8ft3" path="res://assets/audio/music/davidjbarrios-intense-doom-style-metal-instrumental-quotsynthetic-edenquot-515740.mp3" id="7_uewes"]
-[ext_resource type="PackedScene" uid="uid://duqewr7mnao23" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
-[ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
 [ext_resource type="PackedScene" uid="uid://bfb7yna4kbmvx" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
+[ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
 [ext_resource type="PackedScene" uid="uid://c148pg5pgju72" path="res://src/ui/scoreboard.tscn" id="8_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cdqefcqw03v0b" path="res://assets/audio/music/nastelbom-children-463424.mp3" id="9_srxbw"]
-[ext_resource type="PackedScene" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
+[ext_resource type="PackedScene" uid="uid://b4no1mifq5dq" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rlaii"]
 sky_top_color = Color(0.28627452, 0.6156863, 0.972549, 1)
@@ -315,10 +314,12 @@ transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 0, 1.5923395, 0)
 
 [node name="game_audio" type="AudioStreamPlayer" parent="." unique_id=1879346937]
 stream = SubResource("AudioStreamPlaylist_mlv6i")
+bus = &"Music"
 
 [node name="menu_audio" type="AudioStreamPlayer" parent="." unique_id=1958920694]
 stream = SubResource("AudioStreamPlaylist_tb146")
 autoplay = true
+bus = &"Music"
 
 [connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
 [connection signal="quick_time_event" from="StuntManager" to="Player" method="_on_stunt_manager_quick_time_event"]
