@@ -26,10 +26,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(not is_game_started):
+	if not is_game_started && not player._allow_control:
 		player.position = start_baby.position
 		player.position.y = 80
 		cam.position = start_baby.position + Vector3(0,1,2)
+	elif is_game_started && not player._allow_control:
+		player.position.x = start_baby.position.x
+		player.position.z = start_baby.position.z
 	if(Input.is_action_just_pressed("start_game") && !is_game_started):
 		is_game_started = true
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
