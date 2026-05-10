@@ -9,7 +9,7 @@ var menu_audiostream: AudioStreamPlayer
 var title
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	title = $"../Title"
+	title = $"../PlayerCamera/Title"
 	game_audiostream = $"../game_audio"
 	menu_audiostream = $"../menu_audio"
 	cam = $"../PlayerCamera"

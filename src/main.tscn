@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://4unwhiuqxpqy" path="res://src/player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dcitgpspf07k3" path="res://src/main.gd" id="1_kf8lf"]
 [ext_resource type="Script" uid="uid://uwkq38h8cwju" path="res://src/player/player.gd" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://3op00kydd16q" path="res://src/player/player_camera.gd" id="4_3cfgd"]
+[ext_resource type="Script" path="res://src/player/player_camera.gd" id="4_3cfgd"]
 [ext_resource type="Script" uid="uid://cfpho87t1tjjm" path="res://src/level/baby_spawner.gd" id="4_fyndt"]
 [ext_resource type="Script" uid="uid://ci7w3cd7vt6ng" path="res://manager.gd" id="5_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://b0wpdkc4x3fjq" path="res://src/stunts/stunt_manager.tscn" id="5_kmhfv"]
@@ -12,11 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://ceu00tan4r7il" path="res://src/environment/tree.tscn" id="6_rlaii"]
 [ext_resource type="PackedScene" uid="uid://djsrygrl0eir1" path="res://src/environment/slide.tscn" id="7_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://dsr86gvsy8ft3" path="res://assets/audio/music/davidjbarrios-intense-doom-style-metal-instrumental-quotsynthetic-edenquot-515740.mp3" id="7_uewes"]
-[ext_resource type="PackedScene" uid="uid://bfb7yna4kbmvx" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
+[ext_resource type="PackedScene" uid="uid://duqewr7mnao23" path="res://src/ui/highscore.tscn" id="8_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://mcygklfk0jxu" path="res://assets/audio/music/alexgrohl-metal-dark-matter-111451.mp3" id="8_kqbth"]
 [ext_resource type="PackedScene" uid="uid://c148pg5pgju72" path="res://src/ui/scoreboard.tscn" id="8_mgm53"]
 [ext_resource type="AudioStream" uid="uid://cdqefcqw03v0b" path="res://assets/audio/music/nastelbom-children-463424.mp3" id="9_srxbw"]
-[ext_resource type="PackedScene" uid="uid://b4no1mifq5dq" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
+[ext_resource type="PackedScene" path="res://src/environment/pointy_tree.tscn" id="11_uewes"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rlaii"]
 sky_top_color = Color(0.28627452, 0.6156863, 0.972549, 1)
@@ -94,6 +94,9 @@ jump_height = 12.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68507814, 2.3233607)
 current = true
 script = ExtResource("4_3cfgd")
+
+[node name="Title" parent="PlayerCamera" unique_id=798211030 instance=ExtResource("5_mgm53")]
+transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 0, 0.9072614, -2.3233607)
 
 [node name="BabySpawner" type="Node3D" parent="." unique_id=2005273896]
 script = ExtResource("4_fyndt")
@@ -309,9 +312,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0288, 0.039002657, -23.655
 
 [node name="manager" type="Node" parent="." unique_id=187717344]
 script = ExtResource("5_kf8lf")
-
-[node name="Title" parent="." unique_id=798211030 instance=ExtResource("5_mgm53")]
-transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 0, 1.5923395, 0)
 
 [node name="game_audio" type="AudioStreamPlayer" parent="." unique_id=1879346937]
 stream = SubResource("AudioStreamPlaylist_mlv6i")
