@@ -89,7 +89,8 @@ func _on_area_3d_body_entered(body_: Node3D) -> void:
 		crawl_r.stop()
 		wiggle.stop()
 		$body.hide()
-		set_deferred("$Area3D.monitoring ", false)
+		$Area3D.queue_free()
+		
 		$AudioStreamPlayer3D.play()
 		await get_tree().create_timer(60.0).timeout
 		self.queue_free()
